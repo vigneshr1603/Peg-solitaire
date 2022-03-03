@@ -1,4 +1,4 @@
-package Service.Model;
+package Model;
 
 public class Coordinates {
     private int x,y;

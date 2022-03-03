@@ -1,18 +1,18 @@
-package GUI.Utilities;
+package GUI.Service;
 
 import javax.swing.JButton;
 
-import Service.Model.Coordinates;
+import Model.Coordinates;
 
 public class Memory {
     private static Coordinates corrdinates = null;
     private static JButton button = null;
 
-    public static Coordinates getCorrdinates() {
+    public static Coordinates getCoordinates() {
         return corrdinates;
     }
 
-    public static void setCorrdinates(int X, int Y) {
+    public static void setCoordinates(int X, int Y) {
         corrdinates = new Coordinates(X, Y);
     }
 
@@ -24,7 +24,7 @@ public class Memory {
         Memory.button = (JButton) button;
     }
 
-    public static void deleteCorrdinates() {
+    public static void deleteCoordinates() {
         corrdinates = null;
         button = null;
     }

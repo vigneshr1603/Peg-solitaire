@@ -1,4 +1,4 @@
-package GUI.Utilities;
+package GUI.Service;
 
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -9,8 +9,8 @@ import java.io.IOException;
 import javax.imageio.ImageIO;
 import javax.swing.*;
 
-import Service.Model.Board;
-import Service.Model.Coordinates;
+import Model.Board;
+import Model.Coordinates;
 
 public class MyActionListener implements ActionListener {
 
@@ -25,16 +25,19 @@ public class MyActionListener implements ActionListener {
 
         int J = button.getLocation(rv).x / 100;
         int I = button.getLocation(rv).y / 100;
-        
-        if (Memory.getCorrdinates() == null) {
-            Memory.setCorrdinates(I, J);
+
+        if (Memory.getCoordinates() == null) {
+            Memory.setCoordinates(I, J);
             Memory.setButton(button);
             return;
         } else {
-            if (game.isMoveValid(Memory.getCorrdinates(), new Coordinates(I, J))) {
-                game.MakeMove(Memory.getCorrdinates(), new Coordinates(I, J));
-                int A = (I + Memory.getCorrdinates().getX()) / 2;
-                int B = (J + Memory.getCorrdinates().getY()) / 2;
+            if (game.isMoveValid(Memory.getCoordinates(), new Coordinates(I, J))) {
+                game.MakeMove(Memory.getCoordinates(), new Coordinates(I, J));
+                int A = (I + Memory.getCoordinates().getX()) / 2;
+                int B = (J + Memory.getCoordinates().getY()) / 2;
+
+                JButton button2 = Matrix.getButton(A, B);
+                button2.setIcon(null);
 
                 Memory.getButton().setIcon(null);
                 Image Marble;
@@ -46,9 +49,9 @@ public class MyActionListener implements ActionListener {
                     e1.printStackTrace();
                 }
 
-                Memory.deleteCorrdinates();
+                Memory.deleteCoordinates();
             } else {
-                Memory.setCorrdinates(I, J);
+                Memory.setCoordinates(I, J);
                 Memory.setButton(button);
             }
 

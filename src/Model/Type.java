@@ -1,5 +1,4 @@
-
-package Service.Model;
+package Model;
 
 
 public enum Type {

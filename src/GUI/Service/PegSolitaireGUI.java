@@ -1,4 +1,4 @@
-package GUI.Utilities;
+package GUI.Service;
 
 import java.awt.*;
 
@@ -23,7 +23,6 @@ public class PegSolitaireGUI {
                 GameWindow window = new GameWindow();
 
                 frame.getContentPane().add(window);
-
                 frame.pack();
                 frame.setLocationRelativeTo(null);
                 frame.setVisible(true);

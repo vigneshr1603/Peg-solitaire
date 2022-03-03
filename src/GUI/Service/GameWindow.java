@@ -1,4 +1,4 @@
-package GUI.Utilities;
+package GUI.Service;
 
 import java.awt.*;
 import java.io.FileInputStream;
@@ -47,6 +47,7 @@ public class GameWindow extends JPanel {
                     button.setEnabled(false);
                     button.setBackground(java.awt.Color.GRAY);
                 }
+                Matrix.addButton(row,col,button);
 
                 button.setBorderPainted(true);
                 button.setPreferredSize(new Dimension(100, 100));

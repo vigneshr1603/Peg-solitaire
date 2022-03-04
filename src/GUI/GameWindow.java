@@ -33,7 +33,7 @@ public class GameWindow extends JPanel {
 					if (row != 4 || col != 4) {
 						try {
 							Marble = ImageIO.read(getClass().getResource("assets/marble.jpeg"));
-							Marble = Marble.getScaledInstance(90, 90, Image.SCALE_DEFAULT);
+							Marble = Marble.getScaledInstance(50, 50, Image.SCALE_DEFAULT);
 
 						}
 
@@ -57,7 +57,7 @@ public class GameWindow extends JPanel {
 				Matrix.addButton(row, col, button);
 
 				button.setBorderPainted(true);
-				button.setPreferredSize(new Dimension(100, 100));
+				button.setPreferredSize(new Dimension(70, 70));
 				MyActionListener mal = new MyActionListener();
 				button.addActionListener(mal);
 

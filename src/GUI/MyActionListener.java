@@ -20,13 +20,12 @@ public class MyActionListener implements ActionListener {
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
-
 		JButton button = (JButton) e.getSource();
 
 		Point rv = new Point();
 
-		int J = button.getLocation(rv).x / 100;
-		int I = button.getLocation(rv).y / 100;
+		int J = button.getLocation(rv).x / 70;
+		int I = button.getLocation(rv).y / 70;
 
 		if (Memory.getCoordinates() == null) {
 			Memory.setCoordinates(I, J);
@@ -45,7 +44,7 @@ public class MyActionListener implements ActionListener {
 				Image Marble = null;
 				try {
 					Marble = ImageIO.read(getClass().getResource("assets/marble.jpeg"));
-					Marble = Marble.getScaledInstance(90, 90, Image.SCALE_DEFAULT);
+					Marble = Marble.getScaledInstance(50, 50, Image.SCALE_DEFAULT);
 
 				} catch (IOException e1) {
 				}

@@ -22,10 +22,10 @@ public class MyActionListener implements ActionListener {
 	public void actionPerformed(ActionEvent e) {
 		JButton button = (JButton) e.getSource();
 
-		Point rv = new Point();
+		Coordinates C = Matrix.getCoordinatesOfButton(button);
 
-		int J = button.getLocation(rv).x / 70;
-		int I = button.getLocation(rv).y / 70;
+		int I = C.getX();
+		int J = C.getY();
 
 		if (Memory.getCoordinates() == null) {
 			Memory.setCoordinates(I, J);
@@ -38,17 +38,20 @@ public class MyActionListener implements ActionListener {
 				int B = (J + Memory.getCoordinates().getY()) / 2;
 
 				JButton button2 = Matrix.getButton(A, B);
-				button2.setIcon(null);
 
-				Memory.getButton().setIcon(null);
 				Image Marble = null;
+
 				try {
-					Marble = ImageIO.read(getClass().getResource("assets/marble.jpeg"));
-					Marble = Marble.getScaledInstance(50, 50, Image.SCALE_DEFAULT);
+					Marble = ImageIO.read(getClass().getResource("assets/marble.png"));
+					Marble = Marble.getScaledInstance(70, 70, Image.SCALE_DEFAULT);
 
 				} catch (IOException e1) {
+
 				}
+
 				button.setIcon(new ImageIcon(Marble));
+				Memory.getButton().setIcon(null);
+				button2.setIcon(null);
 
 				Memory.deleteCoordinates();
 			} else {

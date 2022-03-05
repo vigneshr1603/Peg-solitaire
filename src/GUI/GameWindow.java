@@ -32,8 +32,8 @@ public class GameWindow extends JPanel {
 				if ((row <= 2 && col > 2 && col < 6) || (row > 2 && row < 6 || (row > 5 && col > 2 && col < 6))) {
 					if (row != 4 || col != 4) {
 						try {
-							Marble = ImageIO.read(getClass().getResource("assets/marble.jpeg"));
-							Marble = Marble.getScaledInstance(50, 50, Image.SCALE_DEFAULT);
+							Marble = ImageIO.read(getClass().getResource("assets/marble.png"));
+							Marble = Marble.getScaledInstance(70, 70, Image.SCALE_DEFAULT);
 
 						}
 
@@ -41,8 +41,9 @@ public class GameWindow extends JPanel {
 							e.printStackTrace();
 
 						}
-
 						button.setIcon(new ImageIcon(Marble));
+					} else {
+						button.setIcon(null);
 					}
 
 					button.setBackground(java.awt.Color.WHITE);
@@ -56,6 +57,7 @@ public class GameWindow extends JPanel {
 				}
 				Matrix.addButton(row, col, button);
 
+				button.setContentAreaFilled(false);
 				button.setBorderPainted(true);
 				button.setPreferredSize(new Dimension(70, 70));
 				MyActionListener mal = new MyActionListener();

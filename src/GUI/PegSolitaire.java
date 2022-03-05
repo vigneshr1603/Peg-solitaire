@@ -5,7 +5,7 @@ import javax.swing.JFrame;
 import javax.swing.WindowConstants;
 
 /**
- * Made by Vignesh
+ * Created by Vignesh
  */
 public class PegSolitaire {
 

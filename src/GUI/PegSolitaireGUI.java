@@ -3,13 +3,16 @@ package GUI;
 import java.awt.*;
 import javax.swing.JFrame;
 import javax.swing.WindowConstants;
+import Model.Board;
 
 /**
  * Created by Vignesh
  */
-public class PegSolitaire {
+public class PegSolitaireGUI {
 
+	public static Board game;
 	public static void main(String args[]) throws Exception {
+		game = new Board();
 		InitializeGUI();
 	}
 
@@ -20,6 +23,7 @@ public class PegSolitaire {
 		EventQueue.invokeLater(new Runnable() {
 			@Override
 			public void run() {
+
 				JFrame frame = new JFrame("Peg Solitaire");
 				frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 				frame.setLayout(new BorderLayout());

@@ -1,8 +1,6 @@
 package GUI;
 
 import java.awt.*;
-
-import javax.imageio.ImageIO;
 import javax.swing.*;
 
 /**
@@ -27,23 +25,12 @@ public class GameWindow extends JPanel {
 
 				JButton button = new JButton();
 
-				Image Marble = null;
-
 				if ((row <= 2 && col > 2 && col < 6) || (row > 2 && row < 6 || (row > 5 && col > 2 && col < 6))) {
 					if (row != 4 || col != 4) {
-						try {
-							Marble = ImageIO.read(getClass().getResource("assets/marble.png"));
-							Marble = Marble.getScaledInstance(70, 70, Image.SCALE_DEFAULT);
 
-						}
-
-						catch (Exception e) {
-							e.printStackTrace();
-
-						}
-						button.setIcon(new ImageIcon(Marble));
+						button = ButtonModifier.setMarbleIcon(button);
 					} else {
-						button.setIcon(null);
+						button = ButtonModifier.removeIcon(button);
 					}
 
 					button.setBackground(java.awt.Color.WHITE);
@@ -59,7 +46,7 @@ public class GameWindow extends JPanel {
 
 				button.setContentAreaFilled(false);
 				button.setBorderPainted(true);
-				button.setPreferredSize(new Dimension(70, 70));
+				button.setPreferredSize(new Dimension(60, 60));
 				MyActionListener mal = new MyActionListener();
 				button.addActionListener(mal);
 

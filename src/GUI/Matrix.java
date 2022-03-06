@@ -10,7 +10,8 @@ import Model.Coordinates;
 
 public class Matrix {
 
-	static JButton[][] buttons = new JButton[9][9];
+	private static JButton[][] buttons = new JButton[9][9];
+	static int pegCount = 44;
 
 	public static void addButton(int i, int j, JButton button) {
 		buttons[i][j] = button;
@@ -28,5 +29,14 @@ public class Matrix {
 			}
 		}
 		return null;
+	}
+
+	public static void deletePeg() {
+		pegCount -= 1;
+
+	}
+
+	public static int getPeg() {
+		return pegCount;
 	}
 }

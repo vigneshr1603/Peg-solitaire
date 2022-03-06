@@ -2,11 +2,9 @@ package Model;
 
 public class Board {
 
-	private Type board[][];
+	private static Type board[][] = new Type[9][9];
 
 	public Board() {
-
-		board = new Type[9][9];
 		for (int row = 0; row < 9; row++) {
 			for (int col = 0; col < 9; col++) {
 				if ((row <= 2 && col > 2 && col < 6) || (row > 2 && row < 6 || (row > 5 && col > 2 && col < 6))) {
